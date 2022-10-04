@@ -20,11 +20,7 @@ function BotsPage() {
 
   //addBotToTheArmy function
   const addBotToTheArmy = (bots) => {
-    if (!botArmy.find((bot) => bot === bots)) {
-      const botsFound = bots.find((bot) => bot === bots);
-
-      setBotArmy([...botArmy, botsFound]);
-    }
+    setBotArmy(bot.map((b) => (b.id === bots.id ? { ...b } : b)));
   };
 
   //deleteBotPermanently function
