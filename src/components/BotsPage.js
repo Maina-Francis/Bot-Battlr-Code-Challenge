@@ -42,6 +42,12 @@ function BotsPage() {
     }
   };
 
+  //removeBotFromTheArmy function
+  const removeBotFromTheArmy = (removeBot) => {
+    const listOfBots = botArmy.filter((bot) => bot !== removeBot);
+    setBotArmy(listOfBots);
+  };
+
   return (
     <div>
       <YourBotArmy
