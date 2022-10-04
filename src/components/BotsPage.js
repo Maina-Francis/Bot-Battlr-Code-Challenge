@@ -18,6 +18,14 @@ function BotsPage() {
       .then((bot) => setBot(bot));
   }, []);
 
+  const addBotToTheArmy = (bots) => {
+    if (!botArmy.find((bot) => bot === bots)) {
+      const botsFound = bots.find((bot) => bot === bots);
+
+      setBotArmy([...botArmy, botsFound]);
+    }
+  };
+
   return (
     <div>
       <YourBotArmy
