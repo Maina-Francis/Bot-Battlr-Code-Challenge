@@ -12,7 +12,7 @@ function BotCollection(props) {
           return (
             <>
               <BotCard bot={bot} handleBot={addBot} deleteBot={deleteBot} />
-              {/* <BotSpecs bot={bot} handleBot={addBot}/> */}
+              {/* <BotSpecs bot={bot} handleBot={addBot} /> */}
             </>
           );
         })}
