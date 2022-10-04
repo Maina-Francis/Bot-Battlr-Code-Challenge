@@ -18,11 +18,27 @@ function BotsPage() {
       .then((bot) => setBot(bot));
   }, []);
 
+  //addBotToTheArmy function
   const addBotToTheArmy = (bots) => {
     if (!botArmy.find((bot) => bot === bots)) {
       const botsFound = bots.find((bot) => bot === bots);
 
       setBotArmy([...botArmy, botsFound]);
+    }
+  };
+
+  //deleteBotPermanently function
+  const deleteBotPermanently = (delBot) => {
+    if (botArmy.find((bot) => bot === delBot)) {
+      const filterArmy = bot.filter((bot) => bot !== delBot);
+      const remainingArmy = botArmy.filter((bot) => bot !== delBot);
+
+      setBot(filterArmy);
+      setBotArmy(remainingArmy);
+
+      fetch(`http://localhost:6001/bots/${delBot.id}`, {
+        method: "DELETE",
+      });
     }
   };
 
