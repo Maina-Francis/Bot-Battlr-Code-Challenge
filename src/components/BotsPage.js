@@ -25,7 +25,11 @@ function BotsPage() {
         removeBot={removeBotFromTheArmy}
         deleteBot={deleteBotPermanently}
       />
-      <BotCollection />
+      <BotCollection
+        bot={bot}
+        addBot={addBotToTheArmy}
+        deleteBot={deleteBotPermanently}
+      />
     </div>
   );
 }
